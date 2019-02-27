@@ -18,6 +18,7 @@
         <% unless task.deadline.nil? %>
           , to read: <%= task.deadline.strftime('%D')  %>
         <% end %>
+        <%= check_box_tag 'true', task.id, task.status, data: { url: task_path(task), remote: :true, method: :patch } %>
       </li>
       <% end %>
     </ul>
