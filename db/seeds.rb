@@ -7,6 +7,15 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'faker'
+
+Task.destroy_all
+ActiveRecord::Base.connection.reset_pk_sequence!('tasks')
+Category.destroy_all
+ActiveRecord::Base.connection.reset_pk_sequence!('categories')
+Email.destroy_all
+ActiveRecord::Base.connection.reset_pk_sequence!('emails')
+
+
 3.times do
   my_category = Category.create(title: Faker::Book.genre)
   3.times do
@@ -16,4 +25,10 @@ require 'faker'
     my_task.category = my_category
     my_task.save
   end
+end
+
+
+10.times do 
+  e = Email.new(object: Faker::Book.title, body: Faker::Company.bs, read: false)
+  e.save
 end

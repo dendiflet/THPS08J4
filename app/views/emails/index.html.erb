@@ -1,0 +1,112 @@
+<div class="container">
+ <div class="row">
+  <!-- First row -->
+  <div class="col-12 col-sm-12 col-md-3 col-lg-2">
+   <!-- Left column (First row) -->
+   <%= link_to "Compose", new_email_path, remote: true, class: "btn btn-danger btn-primary btn-block", remote: true %>
+  </div>
+  <div class="col-12 col-sm-12 col-md-9 col-lg-10">
+   <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+    <button type="button" class="btn btn-secondary">&nbsp;<i class="fa fa-refresh" aria-hidden="true"></i>&nbsp;</button>
+    <button type="button" class="btn btn-secondary">&nbsp;<i class="fa fa-star" aria-hidden="true"></i>&nbsp;</button>
+   </div>
+   <div class="btn-group" role="group">
+    <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					More
+				</button>
+    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+     <a class="dropdown-item" href="#">Action</a>
+     <a class="dropdown-item" href="#">Another action</a>
+     <a class="dropdown-item" href="#">Something else here</a>
+     <div class="dropdown-divider"></div>
+     <a class="dropdown-item" href="#">Separated link</a>
+    </div>
+   </div>
+
+   <!-- Right side buttons -->
+   <div class="pull-right">
+    <button type="button" class="btn btn-secondary">&nbsp;<i class="fa fa-cog" aria-hidden="true"></i>&nbsp;</button>
+    <button type="button" class="btn btn-secondary">&nbsp;<i class="fa fa-bars" aria-hidden="true"></i>&nbsp;</button>
+   </div>
+   <!-- END: Right side buttons -->
+  </div>
+  <!-- END: Right column -->
+
+ </div>
+ <!-- END: first row -->
+ <hr>
+ <div class="row">
+  <!-- Sencond row -->
+  <div class="col-12 col-sm-12 col-md-3 col-lg-2">
+   <!-- LEFT COLUMN Menu (Sencond row) -->
+   <ul class="list-group">
+    <!-- Menu -->
+
+    <li class="list-group-item justify-content-between active">
+     Inbox
+    </li>
+    <li class="list-group-item justify-content-between">
+     Important
+     <span class="badge badge-default badge-pill">2</span>
+    </li>
+    <li class="list-group-item justify-content-between">
+     Sent
+     <span class="badge badge-default badge-pill">1</span>
+    </li>
+    <li class="list-group-item justify-content-between">
+     Spam
+     <span class="badge badge-default badge-pill">1</span>
+    </li>
+   </ul>
+   <!-- End left menu -->
+  </div>
+  <!-- END: Left column (Second row) -->
+  <div class="col-12 col-sm-12 col-md-9 col-lg-10">
+   <!-- Tabs -->
+   <ul class="nav nav-tabs">
+    <li class="nav-item">
+     <a class="nav-link active" href="#"><i class="fa fa-inbox"></i>&nbsp;&nbsp;Inbox</a>
+    </li>
+    <li class="nav-item">
+     <a class="nav-link" href="#"><i class="fa fa-users"></i>&nbsp;&nbsp;Social</a>
+    </li>
+    <li class="nav-item">
+     <a class="nav-link" href="#"><i class="fa fa-tags"></i>&nbsp;&nbsp;Notifications</a>
+    </li>
+    <li class="nav-item">
+     <a class="nav-link" href="#"><i class="fa fa-info-circle"></i>&nbsp;&nbsp;Updates</a>
+    </li>
+   </ul>
+   <!-- END: Tabs -->
+  <% @emails.each do |email| %>
+   <div class="list-group">
+
+    <li class="list-group-item d-flex justify-content-start">
+     <div class="checkbox pt-2">
+      <input type="checkbox">
+     </div>
+
+     &nbsp;&nbsp;&nbsp;&nbsp;
+     
+     <span class="name fullname pt-2"> 
+        <%= link_to email.object, email_path(email), remote: true, class: "text-dark" %>
+        <span class="" id="mail_container"></span>
+      </span>
+
+     <span class="ml-auto p-2">
+						<a href="<%= edit_email_path(email.id) %>"><i class="fa fa-paperclip"></i></a>
+     <span class="badge badge-default badge-pill"><%= email.created_at.strftime('%D') %></span>
+     </span>
+
+    </li>
+
+    </li>
+
+   </div>
+  <% end %>  
+  </div>
+  
+ </div>
+ <!-- END: Second row -->
+</div>
+<!-- END: container -->

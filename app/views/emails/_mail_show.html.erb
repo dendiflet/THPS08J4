@@ -1,0 +1,26 @@
+<div class="card-body">
+  <h4 class="card-title display-4"><%= @email.object %></h4>
+  <p class="card-text lead"><%= @email.body %></p>
+  <hr class="mt-5">
+  <%= link_to "Supprimer e-mail", email_path(@email), method: :delete, :class => "btn btn-danger float-right", role: "button", data: { confirm: "Etes-vous sûr ?" } %>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"><%= @email.object %></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p><%= @email.body %></p>
+      </div>
+      <div class="modal-footer">
+        <%= link_to "Nouvel E-mail", new_email_path, remote: true, class: "btn btn-block btn-success", remote: true %>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
