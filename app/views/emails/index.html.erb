@@ -79,6 +79,10 @@
    </ul>
    <!-- END: Tabs -->
 
+
+
+
+<!-- above is not my code -->
 <!-- divide into two colums -->
       <div class="container">
         <div class="row">
@@ -87,38 +91,34 @@
           <div class="column col-md-6">
             <% @emails.each do |email| %>
 
-              <div class="list-group"
->
+              <div class="list-group">
 
+                <!-- there's condition inside li who add css style if... -->
                 <li id="email-<%= email.id %>"  class=" list-group-item d-flex justify-content-start"
 
                   <% if email.read == true %> style="background-color: green" <% end %>
 
                 >
 
+                  <!-- there's display condition about the icon -->
                   <% if email.read == false %> <i id="icon-<%= email.id %>" class="fa fa-plus-circle"></i> <% end %>
 
                   <div class="checkbox pt-2">
-
                     <input type="checkbox">
                   </div>
 
                    &nbsp;&nbsp;&nbsp;&nbsp;
                  
-                  <span class="name fullname pt-2"> 
-
-
-
-
-                  
+                  <span class="name fullname pt-2">        
                     <%= link_to email.object, email_path(email), remote: true, class: "text-dark" %>
                   </span>
 
-
                   <span class="ml-auto p-2">
                     <a href="<%= edit_email_path(email.id) %>"><i class="fa fa-paperclip"></i></a>
+
                   <span class="badge badge-default badge-pill"><%= email.created_at.strftime('%D') %>
-                  </span>     
+                  </span>  
+                  </span>                     
                 </li>
               </div>
             <% end %>
@@ -132,6 +132,13 @@
         </div>
       </div> 
 <!-- End of the two colums for the mail list and show mail --> 
+<!-- under is not my code -->
+
+
+
+
+
+
     </div>  
   </div>
  <!-- END: Second row -->
