@@ -11,6 +11,7 @@ comme d'hab :
 bundle install
 rails db:create db:migrate db:seed
 
-
+voici le lien en prod 
+https://petite-ajaxtion-dans-ta-face.herokuapp.com/
 
 etc
