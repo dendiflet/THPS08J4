@@ -28,7 +28,7 @@ ActiveRecord::Base.connection.reset_pk_sequence!('emails')
 end
 
 
-10.times do 
+50.times do 
   e = Email.new(object: Faker::Book.title, body: Faker::Company.bs, read: false)
   e.save
 end

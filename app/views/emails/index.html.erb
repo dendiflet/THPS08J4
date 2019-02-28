@@ -78,35 +78,50 @@
     </li>
    </ul>
    <!-- END: Tabs -->
-  <% @emails.each do |email| %>
-   <div class="list-group">
 
-    <li class="list-group-item d-flex justify-content-start">
-     <div class="checkbox pt-2">
-      <input type="checkbox">
-     </div>
+<!-- divide into two colums -->
+      <div class="container">
+        <div class="row">
 
-     &nbsp;&nbsp;&nbsp;&nbsp;
-     
-      <span class="name fullname pt-2"> 
-      <%= link_to email.object, email_path(email), remote: true, class: "text-dark" %>
-      </span>
-      <span id="mail_container"></span>
+          <!-- column of the list -->
+          <div class="column col-md-6">
+            <% @emails.each do |email| %>
 
-     <span class="ml-auto p-2">
-						<a href="<%= edit_email_path(email.id) %>"><i class="fa fa-paperclip"></i></a>
-     <span class="badge badge-default badge-pill"><%= email.created_at.strftime('%D') %></span>
-     </span>
+              <div class="list-group">
 
-    </li>
+                <li id="email-<%= email.id %>"  class=" list-group-item d-flex justify-content-start">
+                  <div class="checkbox pt-2">
+                    <i class="fa
+                     fa-check-circle"></i>
+                    <input type="checkbox">
+                  </div>
 
-    </li>
+                   &nbsp;&nbsp;&nbsp;&nbsp;
+                 
+                  <span class="name fullname pt-2"> 
+                    <%= link_to email.object, email_path(email), remote: true, class: "text-dark" %>
+                  </span>
 
-   </div>
-  <% end %>  
+
+                  <span class="ml-auto p-2">
+                    <a href="<%= edit_email_path(email.id) %>"><i class="fa fa-paperclip"></i></a>
+                  <span class="badge badge-default badge-pill"><%= email.created_at.strftime('%D') %>
+                  </span>     
+                </li>
+              </div>
+            <% end %>
+          </div>
+
+
+          <!-- column of the show mail -->
+          <div class="column col-md-6 border border-danger">
+            <span id="mail_container"></span>
+          </div>
+        </div>
+      </div> 
+<!-- End of the two colums for the mail list and show mail --> 
+    </div>  
   </div>
-  
- </div>
  <!-- END: Second row -->
 </div>
 <!-- END: container -->
