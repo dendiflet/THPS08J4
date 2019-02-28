@@ -1,24 +1,16 @@
-# README
+bonjour,
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+pour etre franc, on m'a filé un repos plutot complet de mercredi (j'étais en pls). (merci Mr segrelove)
 
-Things you may want to cover:
+ceci a été moins point de départ pour découvrir ajax.
+(ligne 85 de email#index)
 
-* Ruby version
 
-* System dependencies
+comme d'hab : 
 
-* Configuration
+bundle install
+rails db:create db:migrate db:seed
 
-* Database creation
 
-* Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+etc

@@ -96,12 +96,12 @@
                 <!-- there's condition inside li who add css style if... -->
                 <li id="email-<%= email.id %>"  class=" list-group-item d-flex justify-content-start"
 
-                  <% if email.read == true %> style="background-color: green" <% end %>
+                  <% if email.readed == true %> style="background-color: green" <% end %>
 
                 >
 
                   <!-- there's display condition about the icon -->
-                  <% if email.read == false %> <i id="icon-<%= email.id %>" class="fa fa-plus-circle"></i> <% end %>
+                  <% if email.readed == false %> <i id="icon-<%= email.id %>" class="fa fa-plus-circle"></i> <% end %>
 
                   <div class="checkbox pt-2">
                     <input type="checkbox">

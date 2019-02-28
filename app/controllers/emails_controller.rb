@@ -15,7 +15,7 @@ class EmailsController < ApplicationController
   end
 
   def index
-    @emails = Email.all
+    @emails = Email.all.sort_by(&:id)
   end
 
   def edit
@@ -35,8 +35,9 @@ class EmailsController < ApplicationController
   end
 
   def show
+
     @email = Email.find(params[:id])
-    @email.read = true
+    @email.readed = true
     @email.save
 
     respond_to do |format|
