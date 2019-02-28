@@ -3,8 +3,7 @@ class CreateEmails < ActiveRecord::Migration[5.2]
     create_table :emails do |t|
       t.string :object
       t.string :body
-      t.boolean :read
-
+      t.boolean :readed
       t.timestamps
     end
   end

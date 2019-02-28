@@ -1,2 +1,5 @@
 
 $('#mail_container').html("<%= j (render 'mail_show') %>").toggle();
+$("li#email-<%= @email.id %>").css({backgroundColor: "#333", color: "#FFF"});
+$('i#icon-<%= @email.id %>').remove();
+
